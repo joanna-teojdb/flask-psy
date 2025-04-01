@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasy Psów</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Poznaj Najpopularniejsze Rasy Psów</h1>
+    </header>
+    
+    <main class="breeds-container">
+        {% for breed in breeds %}
+        <div class="breed-card">
+            <img src="{{ breed.image }}" alt="{{ breed.name }}">
+            <h2>{{ breed.name }}</h2>
+            <p>{{ breed.description }}</p>
+        </div>
+        {% endfor %}
+    </main>
+
+    <footer>
+        <p>© 2024 Strona o Rasach Psów</p>
+    </footer>
+</body>
+</html> 
